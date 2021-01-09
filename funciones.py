@@ -10,7 +10,19 @@ def pedirDatosRegistro():
     direccion = input("Ingresa la dirección: ")
     ciudad = input("Ingresa la ciudad del destinatario: ")
     telefono = input("Ingresa el telefono: ")
-    unidades = int(input("Ingra la cantidad de elementos a enviar: "))
+
+    unidadesCorrectas = False
+    while(not unidadesCorrectas):
+        unidades = input("Ingresa la cantidad de elementos a enviar: ")
+        if unidades.isnumeric():
+            if(int(unidades) > 0):
+                unidadesCorrectas = True
+                unidades = int(unidades)
+            else:
+                print("La cantidad debe ser mayor a 0!")
+        else:
+            print("La cantidad debe ser un valor numerico!")
+    
     observacion = input("Ingresa una observación: ")
     fecha = input("Ingresa la fecha (yyyy-mm-dd) : ")
 
