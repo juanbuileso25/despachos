@@ -39,7 +39,11 @@ def ejecutarOpcion(opcion):
         except:
             print("Ocurrio un error")
     elif opcion == 2:
-        print("")
+        despacho = funciones.pedirDatosRegistro()
+        try:
+            dao.registrarDespacho(despacho)
+        except:
+            print("Ocurrio un error")
     elif opcion == 3:
         print("")
     elif opcion == 4:
